@@ -1,0 +1,13 @@
+{
+    "name": "Valentines-Day",
+    "dependencies": {
+        "debug": "latest",
+        "three": "0.101.1"
+    },
+    "devDependencies": {
+        "http-server": "0.11.1"
+    },
+    "scripts": {
+		"serve": "http-server"
+    }
+}
