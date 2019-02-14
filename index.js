@@ -75,16 +75,22 @@ function render() {
 
 function displayTimer() {
   let today = new Date();
-  let old = new Date(2015, 10, 28, 0, 0, 0, 0);
+  let old = new Date(2016, 10, 28, 0, 0, 0, 0);
   let delta = (today - old) / 1000;
 
   let days = Math.floor(delta / (24 * 60 * 60));
   let left = delta - days * (24 * 60 * 60);
 
   let hours = Math.floor(left / (60 * 60));
+  if(hours < 10){
+    hours = "0" + hours;
+  }
   left = left - hours * (60 * 60);
 
   let minutes = Math.floor(left / 60);
+  if(minutes < 10){
+    minutes = "0" + minutes;
+  }
   left = left - minutes * (60);
 
   let seconds = Math.floor(left);
@@ -94,7 +100,7 @@ function displayTimer() {
   // var timer = document.getElementById("timer");
   // timer.innerHTML = (days + 1) + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
 
-  return String((days + 1) + "天" + hours + "小时" + minutes + "分" + seconds + "秒");
+  return String(days + "天" + hours + "小时" + minutes + "分" + seconds + "秒");
 }
 
 function addText() {
@@ -103,7 +109,7 @@ function addText() {
   if (textObject !== undefined || textObject !== null) {
     scene.remove(textObject);
   }
-  var message = "    FF & XX 在一起已经    \n" + displayTimer();
+  var message = "   FF & XX 在一起已经   \n" + displayTimer();
 
   var xMid, text;
   var color = 0xff6699;
